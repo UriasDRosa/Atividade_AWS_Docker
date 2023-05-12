@@ -22,10 +22,10 @@ resource "aws_launch_configuration" "my_launch_configuration" {
               sudo echo 'AllowUsers ec2-user'
               sudo echo ${aws_efs_mount_target.efs_mount_target_a.ip_address}:/ /efs nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,_netdev 0 0 | sudo tee -a /etc/fstab
               git clone https://github.com/MarcoBosc/atividade-aws-docker.git
-              mv atividade-aws-docker /efs
+              mv Atividade-AWS-Docker /efs
               cd /efs
               mkdir db_data && mkdir wp_data
-              cd atividade-aws-docker
+              cd Atividade-AWS-Docker
               sudo echo "${aws_db_instance.my_db_instance.endpoint}" > endpoint.txt
               docker-compose up        
               EOF
