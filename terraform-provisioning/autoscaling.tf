@@ -22,7 +22,7 @@ resource "aws_launch_configuration" "my_launch_configuration" {
               sudo echo 'AllowUsers ec2-user'
               sudo echo ${aws_efs_mount_target.efs_mount_target_a.ip_address}:/ /efs nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,_netdev 0 0 | sudo tee -a /etc/fstab
               git clone https://github.com/XuriMechanics/Atividade_AWS_Docker.git
-              mv Atividade-AWS-Docker /efs
+              mv Atividade_AWS_Docker /efs
               cd /efs
               mkdir db_data && mkdir wp_data
               cd Atividade_AWS_Docker
