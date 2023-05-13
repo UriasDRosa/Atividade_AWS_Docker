@@ -25,7 +25,7 @@ resource "aws_launch_configuration" "my_launch_configuration" {
               mv Atividade-AWS-Docker /efs
               cd /efs
               mkdir db_data && mkdir wp_data
-              cd Atividade-AWS-Docker
+              cd Atividade_AWS_Docker
               sudo echo "${aws_db_instance.my_db_instance.endpoint}" > endpoint.txt
               docker-compose up        
               EOF
